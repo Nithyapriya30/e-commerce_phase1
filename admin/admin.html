@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER Verification</title>
+    <style>
+        /* Reset some default styles */
+body, h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #ffffff;
+    color: #000000;
+     box-shadow: 10px 5px 5px #cefade;
+    text-align: center;
+    padding: 20px;
+    position:sticky;
+    z-index: 999;
+}
+
+.admin-content {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+/* Example styles for different sections (customize as needed) */
+.verification-requests {
+    background-color: #f0f0ff;
+}
+
+.dispute-problems {
+    background-color: #ffcccc;
+}
+
+.new-product-listings {
+    background-color: #ccffcc;
+}
+/* Existing styles */
+
+/* Add styles for verification requests */
+.verification-request {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.verification-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-button, .resolve-button {
+    padding: 5px 10px;
+    background-color: #ff3d3d; /* Red for Close */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resolve-button {
+    background-color: #0af59e; /* Green for Resolve */
+}
+
+/* Add styles for order details boxes */
+.order-box {
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.order-box img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+     .sidenav {
+    height:100%;
+    width: 250px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    background-color:#ffffff;
+    padding-top: 20px;
+    top: 10%;
+    border-style: ridge;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 15px;
+}
+
+.sidenav ul li {
+    margin-bottom: 15px;
+}
+
+.sidenav ul li a {
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    padding: 10px;
+    transition: 0.3s;
+    font-size: 20px;
+    font-weight: 100;
+    bottom: 20px;
+}
+
+.sidenav ul li a:hover {
+    background-color: rgb(204, 253, 229);
+}
+ .sticky-pos{
+        position: sticky;
+        top: 0%;
+      }  
+    </style>
+</head>
+
+<body>
+    <div class="sticky-pos">
+    <header>
+        <h1>Welcome Admin!!!</h1>
+    </header>
+    <div class="sidenav">
+        <ul>
+        <li><a href="adminpg.html" target="_blank">Dashboard</a></li>
+        <li><a href="admin.html" target="_blank">User Verification</a></li>
+        <li><a href="pdtapp.html" target="_blank">Product Approval</a></li>
+        <li><a href="pdtlisting.html" target="_blank">Resolve Disputes</a></li>
+        </ul>
+    </div>
+</div>
+    <div class="admin-content">
+        <section class="verification-requests">
+            <h2>User Verification Requests</h2>
+            <!-- Display user verification requests here -->
+            <!-- <div class="admin-content">
+                <section class="verification-requests">
+                    <h2>User Verification Requests</h2>
+             -->
+                    <!-- User Verification Request 1 -->
+                    <div class="verification-request">
+                        <p>User: NITHYA</p>
+                        <p>Request Date: 2023-10-25</p>
+                        <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="verification-buttons">
+                            <button class="close-button">Reject</button>
+                            <button class="resolve-button">Approve</button>
+                        </div>
+                    </div>
+            
+                    <!-- User Verification Request 2 (Add more as needed) -->
+                    <div class="verification-request">
+                        <p>User: NITHYA</p>
+                        <p>Request Date: 2023-10-26</p>
+                        <p>Details: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="verification-buttons">
+                            <button class="close-button">Reject</button>
+                            <button class="resolve-button">Approve</button>
+                        </div>
+                    </div>
+                    <div class="verification-request">
+                        <p>User:NITHYA</p>
+                        <p>Request Date: 2023-10-25</p>
+                        <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="verification-buttons">
+                            <button class="close-button">Reject</button>
+                            <button class="resolve-button">Approve</button>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="order-details">
+                    <h2>Order Details</h2>
+            
+                    <!-- Order Box 1 -->
+                    <div class="order-box">
+                      <center> <img src="../admin/assets/image/pic1.jpeg" alt="Product 1"></center>
+                        <p>Order ID: 123456</p>
+                        <p>Product: Product A</p>
+                        <p>Quantity: 2</p>
+                        <p>Total Price: $50</p>
+                    </div>
+            
+                    <!-- Order Box 2 (Add more as needed) -->
+                    <div class="order-box">
+                        <center><img src="../admin/assets/image/pic1.jpeg"alt="Product 2"></center>
+                        <p>Order ID: 789012</p>
+                        <p>Product: Product B</p>
+                        <p>Quantity: 3</p>
+                        <p>Total Price: $75</p>
+                    </div>
+                </section>
+            </div>
+        </section>
+</body>
+
+</html>

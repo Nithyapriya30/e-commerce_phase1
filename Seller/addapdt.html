@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <title>Add a new pdt</title>
+    <style>
+        /* 
+=================
+Navigation
+=================
+*/.navigation {
+            height: 6rem;
+            line-height: 6rem;
+            background-color:#ffffff;
+            box-shadow: 10px 5px 5px #cefade;
+        }
+
+        .navigation h1 {
+            text-decoration-color: #040404;
+            background: linear-gradient(70deg, #ff0000, #8a8a32, #ffff00, #172e2c, #4f71fc, #fc60d7, #ff0000);
+            border-color: #040404;
+            background-size: 400%;
+            word-spacing: 5px;
+            background-clip: initial;
+            -webkit-text-fill-color:transparent;
+            -webkit-background-clip: text;
+            animation: animate 10s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 400%;
+            }
+        }
+
+        .nav-center {
+            justify-content: space-between;
+        }
+
+        .nav-list .icons {
+            display: none;
+            color: #000000;
+        }
+
+        .nav-center .nav-item:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        .nav-center .nav-link {
+            font-size: 1.8rem;
+            padding: 1rem;
+            color: #000000;
+        }
+
+        .nav-center .nav-link:hover {
+            color: var(--black);
+            border-style: solid;
+            background-color: var(--white);
+            border-color:#6be0b5;
+            border-width: 2px;
+            border-radius: 1px;
+        }
+
+        .nav-center .hamburger {
+            display: none;
+            font-size: 2.3rem;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        /* Icons */
+
+        .icon {
+            cursor: pointer;
+            font-size: 2.5rem;
+            padding: 0 1rem;
+            color: #000000;
+            position: relative;
+            color:#000000;
+        }
+
+        .icon:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        .icon span {
+            position: absolute;
+            top: 3px;
+            right: -3px;
+            background-color: var(--red);
+            color: var(--black);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            height: 2rem;
+            width: 2rem;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .nav-list {
+                position: fixed;
+                top: 12%;
+                left: -35rem;
+                flex-direction: column;
+                align-items: flex-start;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+                background-color: rgb(0, 0, 0);
+                height: 100%;
+                width: 0%;
+                max-width: 35rem;
+                z-index: 100;
+                transition: all 300ms ease-in-out;
+            }
+
+            .nav-list.open {
+                left: 0;
+                width: 100%;
+            }
+
+            .nav-list .nav-item {
+                margin: 0 0 1rem 0;
+                width: 100%;
+            }
+
+            .nav-list .nav-link {
+                font-size: 2rem;
+                color: var(--black);
+            }
+
+            .nav-center .hamburger {
+                display: block;
+                color: var(--black);
+                font-size: 3rem;
+            }
+
+            .icons {
+                display: none;
+            }
+
+            .nav-list .icons {
+                display: flex;
+            }
+
+            .top-nav ul {
+                display: none;
+            }
+
+            .top-nav div {
+                justify-content: center;
+                height: 3rem;
+            }
+        }
+
+        /* 
+=================
+Hero Area
+=================
+*/
+
+        .hero,
+        .hero .glide__slides {
+            background-color: var(--white);
+            position: relative;
+            height: calc(100vh - 6rem);
+            margin: 0 4rem;
+            overflow: hidden;
+        }
+
+        .hero .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 100%;
+            padding-top: 3rem;
+        }
+
+        .hero .left {
+            position: absolute;
+            top: 0%;
+            left: 25rem;
+            opacity: 0;
+            transition: all 1000ms ease-in-out;
+        }
+
+        .hero .left span {
+            color: var(--green)
+        }
+
+        .hero .left h1 {
+            font-size: 5rem;
+            margin: 1rem 0;
+            color: var(--black);
+            background: linear-gradient(70deg, #ff0000, #ffff00, #ffff00, #83f3ea, #4f71fc, #fc60d7, #ff0000);
+            background-size: 400%;
+            word-spacing: 5px;
+            background-clip: initial;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            animation: animate 10s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 400%;
+            }
+        }
+
+        .hero .left p {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .hero .left .hero-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-size: 1.6rem;
+            margin-top: 1rem;
+            background-color: var(--black);
+            color: white;
+        }
+
+        .hero .right {
+            flex: 0 0 50%;
+            height: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero .right img {
+            position: absolute;
+            width: 55rem;
+            opacity: 0;
+            transition: all 1000ms ease-in-out;
+        }
+
+        .center .right img.img1 {
+            width: 85%;
+            right: -25%;
+            bottom: -50%;
+        }
+
+        .center .right img.img2 {
+            width: 90%;
+            right: -40%;
+            bottom: -40%;
+        }
+
+        .glide__slide--active .center .right img {
+            bottom: -3%;
+            opacity: 1;
+        }
+
+        .glide__slide--active .left {
+            opacity: 1;
+            top: 35%;
+        }
+
+        /*
+======================
+Hero Media Query
+======================
+*/
+        @media only screen and (max-width: 1500px) {
+            .hero .left {
+                left: 0;
+            }
+        }
+
+        @media only screen and (max-width: 999px) {
+            .glide__slide--active .left {
+                top: 15%;
+            }
+
+            .center .right img.img1 {
+                width: 90%;
+            }
+
+            .center .right img.img2 {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 567px) {
+            .center .right img.img1 {
+                width: 30rem;
+            }
+
+            .center .right img.img2 {
+                width: 33rem;
+            }
+
+            .hero,
+            .hero .glide__slides {
+                margin: 0;
+                padding: 0 3rem;
+            }
+
+            .hero .left h1 {
+                font-size: 3rem;
+            }
+
+            .hero .left span {
+                font-size: 1.4rem;
+            }
+
+            .hero .left p {
+                font-size: 1.5rem;
+                width: 80%;
+            }
+        }
+
+        .del-btn {
+            cursor: pointer;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+        /* Color Variables */
+        :root {
+            --white: #fff;
+            --black: #222;
+            --green: #6cbe02;
+            --grey1: #A9A8A9;
+            --grey2: #676666;
+            --rojo: #ff3d3d;
+            --turquesa: #0af59e;
+            --morado: #810af5;
+            --orange: #F97517;
+        }
+
+        /* Basic Reset */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+
+        html {
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.6rem;
+            background-color: rgb(255, 255, 255);
+            color: var(--black);
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 114rem;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .d-flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .sidenav {
+            height: 200%;
+            width: 260px;
+            position:fixed;
+            top: 160px;
+            left: 0;
+            background-color: #ffffff;
+            padding-top: 20px;
+            top:8%;
+            border-style:ridge;
+        }
+
+        .sidenav ul {
+            list-style-type: none;
+            padding: 15px;
+        }
+
+        .sidenav ul li {
+            margin-bottom: 15px;
+        }
+
+        .sidenav ul li a {
+            text-decoration: none;
+            color: #060606;
+            display: block;
+            padding: 10px;
+            transition: 0.3s;
+            font-size: 20px;
+            font-weight: 100;
+            bottom: 20px;
+        }
+
+        .sidenav ul li a:hover {
+            background-color: rgb(146, 236, 192);
+        }
+
+
+        .product-form {
+            border-color: #1f5723;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .product-form {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #121010;
+            border-radius:23px;
+            background-color: #f9f9f9;
+        }
+
+        .product-form h2 {
+            text-align: center;
+        }
+
+        .product-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-form label {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .product-form input[type="text"],
+        .product-form input[type="number"],
+        .product-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #056503;
+            border-radius: 5px;
+        }
+
+        .product-form button[type="submit"] {
+            background-color: #1f5723;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .product-form button[type="submit"]:hover {
+            background-color: #4d4d23;
+        }
+        .response-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-color: #121010;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea  {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+select
+{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border-color:#1f5723;
+}
+button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+  .product-info {
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        .product-info span {
+            display: inline-block;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .product-info a {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 1rem;
+            transition: all 300ms ease;
+            color: white;
+        }
+
+        .product-info a:hover {
+            color: var(--rojo);
+        }
+        a{
+            text-decoration: none;
+        }
+        .onee
+        {
+            header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    width: 100px;
+}
+
+h1 {
+    margin: 0;
+}
+        }
+
+
+
+      .sticky-pos{
+        position: sticky;
+        top: 0%;
+      }  
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <ul>
+           
+            <li><a href="addapdt.html" target="_blank">Dashboard</a></li>
+            <li><a href="ordermanagement.html" target="_blank">Order Management</a></li>
+            <li><a href="nav.html" target="_blank">Product management</a></li>
+            <li><a href="addapdt.html" target="_blank">Add a Product</a></li>
+        </ul>
+    </div>
+    <!-- Top Nav -->
+    
+<div class="sticky-pos">
+    <div class="navigation">
+        <div class="nav-center container d-flex">
+            <a href="/" class="logo">
+                <h1>Trndzz</h1>
+            </a>
+
+            <ul class="nav-list d-flex">
+                <li class="nav-item">
+                    <a href="seldashboard.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cart.html" class="nav-link">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a href="product.html" class="nav-link">Product</a>
+                </li>
+                <li class="icons d-flex">
+                    <a href="seldashboard.html" class="icon">
+                        <i class="bx bx-user"></i>
+                    </a>
+                    <div class="icon">
+                        <i class="bx bx-search"></i>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="icons d-flex">
+                <a href="login.html" class="icon">
+                    <i class="bx bx-user"></i>
+                </a>
+                <div class="icon">
+                    <i class="bx bx-search"></i>
+                </div>
+                <div class="icon">
+                    <i class="bx bx-heart"></i>
+                    <span class="d-flex">0</span>
+                </div>
+                <a href="cart.html" class="icon">
+                    <i class="bx bx-cart"></i>
+                    <span class="d-flex">0</span>
+                </a>
+            </div>
+            
+    </div>
+</div>
+</div>
+        <section>
+            <div class="product-form">
+                <h2>Add a New Product</h2>
+                <form>
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" required>
+                    <label for="productDescription">Product Description:</label>
+                    <textarea id="productDescription" required></textarea>
+                    <label for="productPrice">Price:</label>
+                    <input type="number" id="productPrice" required>
+                    <label for="productName">Category:</label>
+                    <input type="text" id="productName" required>
+                    <label for="productName">Gender:</label>
+                    <select>
+                        <option>SELECT</option>
+                        <option>MALE</option>
+                        <option>FEMALE</option>
+                        <option>TG</option>
+                    </select>
+                    <label for="productName">Brand:</label>
+                    <input type="text" id="productName" required>
+                    <input type="text" id="productName" required>
+                    <label for="productImage">Image:</label>
+                    <input type="file" id="productImage" accept="image/*">
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+        </section>
+        <br>
+        <hr>
+        <section>
+            <center><h1 class="onee">Enquiry Response Form</h1></center>
+        
+        <div class="response-form">
+            <form>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="message">Your Response:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+        
+                <button type="submit">Send Response</button>
+            </form>
+        </div>
+        </section>>
+</body>
+
+</html>

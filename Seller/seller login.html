@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Login Page</title>
+    <style>
+        * {
+    margin: 0%;
+    padding: 0%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
+
+body {
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 35%, rgb(255, 255, 255) 100%);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: cover;
+  
+}
+
+.container {
+    background-color: #adffaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 300px 40px 300px;
+    border:1px solid black;
+}
+
+.box-container {
+    padding: 30px 40px;
+    height: 700px;
+    overflow: auto;
+}
+
+h2 {
+    font-size: 27px;
+    padding-top: 30px;
+    padding-bottom: 25px;
+}
+
+label,
+input,
+select {
+    font-size: 20px;
+}
+
+.name,
+.mail,
+.address,
+.state,
+.country,
+.gender,
+.status,
+.job,
+.year,
+.date,
+.location,
+.avail,
+.certi,
+.file,
+.footer {
+    padding: 13px 0;
+}
+
+.name label {
+    padding: 3px 15px 3px 0;
+}
+
+.name label[for=lname] {
+    padding-left: 61px;
+}
+
+.mail label[for=email] {
+    padding: 3px 62px 3px 0;
+}
+
+.mail label[for=phn] {
+    padding: 0 45px 0 60px;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+select[id=gender],
+.status input,
+.date input,
+.avail input {
+    width: 28%;
+    height: 30px;
+    border: 1px solid #cac9c9;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 2px 1px 9px 3px #468e31;
+}
+
+.address label[for=door] {
+    padding: 0 47px 0 0;
+}
+
+.address label[for=street] {
+    padding: 0 61px 0 62px;
+}
+
+.state label[for=state] {
+    padding-right: 63px;
+}
+
+.country label[for=country] {
+    padding-right: 41px;
+}
+
+.gender label[for=gender] {
+    padding-right: 45px;
+}
+
+.gender select {
+    width: 28.2%;
+}
+
+.status label[for=status] {
+    padding-right: 53px;
+}
+
+.job label[for=fresh] {
+    padding: 4px 28px 0 0;
+}
+
+.job label[for=check] {
+    padding: 0 50px 0 0;
+}
+
+.job {
+    display: flex;
+}
+
+.job-container {
+    padding: 6px 360px 6px 10px;
+    border: 1px solid #5e915f;
+    background-color: white;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 2px 1px 9px 3px #94cb99;
+}
+
+.year-1 {
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 50px;
+    padding: 6px 0px 6px 10px;
+    border: 1px solid #3f5f30;
+    background-color: white;
+    border-radius: 7px 7px 7px 7px;
+     box-shadow: 2px 1px 9px 3px #94cb99;
+}
+
+.year label[for=year0] {
+    padding-right: 90px;
+}
+
+.p1 {
+    display: flex;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-right: 50px;
+    padding: 6px 0px 6px 10px;
+    border: 1px solid #cac9c9;
+    background-color: white;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 2px 1px 9px 3px #94cb99;
+}
+
+.p2,
+.p3 {
+    margin-right: 20px;
+}
+
+.date label[for=date] {
+    padding-right: 10px;
+}
+
+.location label[for=loc] {
+    padding-right: 18px;
+    padding-top: 5px;
+}
+
+.location label[for=chennai],
+label[for=banglore] {
+    padding-right: 30px;
+}
+
+.location {
+    display: flex;
+}
+
+.loc1 {
+    padding: 5px 230px 5px 10px;
+    border: 1px solid #cac9c9;
+    background-color: white;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 2px 1px 9px 3px #94cb99;
+}
+
+.avail label {
+    padding-right: 33px;
+}
+
+.file1,
+.certi1 {
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-right: 50px;
+    padding: 6px 0px 6px 10px;
+    border: 1px solid #cac9c9;
+    background-color: white;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 2px 1px 9px 3px #94cb99;
+}
+
+.footer input {
+    background-color: #9ad6e3;
+
+}
+
+.des textarea {
+    margin-top: 10px;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 2px 1px 9px 3px #94cb99;
+}
+
+.footer input {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.footer input[type=reset] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+    </style>
+</head>
+    <body>
+        <div class="container">
+            <div class="box-container">
+                <h1>
+                    <center>Seller Registration Form</center>
+                </h1>
+                <form>
+                    <h2>Personal Details</h2>
+                    <div class="name">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="fname" placeholder="First Name" required>
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+                    </div>
+                    <div class="mail">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="xyz@gmail.com" required>
+                        <label for="phn">Contact</label>
+                        <input type="tel" id="phn" name="phn" pattern="[0-9] , /" placeholder="Contact Number">
+                    </div>
+                    <div class="address">
+                        <label for="door">Flat No</label>
+                        <input type="text" id="door" name="door" required>
+                        <label for="street">Street</label>
+                        <input type="text" id="street" name="street" required>
+                    </div>
+                    <div class="state">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state" required>
+                    </div>
+                    <div class="country">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                    <div class="gender">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender">
+                            <option>Select</option>
+                            <option>Female</option>
+                            <option>Male</option>
+                            <option>Prefer not to say</option>
+                        </select>
+                    </div>
+                    <h2>Company Details</h2>
+                    <div class="country">
+                        <label for="country">Company Name</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                    <div class="des">
+                        <label for="about">Address</label><br>
+                        <textarea id="about" name="about" rows="5" cols="111"></textarea>
+                    </div><br>
+                    <div class="job">
+                        <label for="fresh">Do you have a Company</label>
+                        <div class="job-container">
+                            <input type="radio" id="check" name="fresh" required>
+                            <label for="check">Yes</label>
+                            <input type="radio" id="checks" name="fresh" required>
+                            <label for="checks">No</label>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <label for="date">Starting Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <!-- <div class="location">
+                        <label for="loc">Job Location</label>
+                        <div class="loc1">
+                            <input type="checkbox" id="chennai" name="loc">
+                            <label for="chennai">Chennai</label>
+                            <input type="checkbox" id="banglore" name="loc">
+                            <label for="banglore">Banglore</label>
+                            <input type="checkbox" id="cbe" name="loc">
+                            <label for="cbe">Coimbatore</label>
+                        </div>
+                    </div> -->
+                    <div class="country">
+                        <label for="country">Bank Account Number</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                    <div class="country">
+                        <label for="country">Tax Identification Number</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                    <div class="avail">
+                        <label for="avail">Availability</label>
+                        <input list="avail" name="avail" placeholder="Choose one">
+                        <datalist id="avail">
+                            <option value="Partime Job">
+                            <option value="Fulltime Job">
+                        </datalist>
+                    </div>
+                    <div class="file">
+                        <label for="myFile">Govt IDs</label>
+                        <div class="file1">
+                            <input type="file" id="myFile" name="filename">
+                        </div>
+                    </div>
+                    <div class="certi">
+                        <label for="certi">Buisness License</label>
+                        <div class="certi1">
+                            <input type="file" id="certi" name="filename">
+                        </div>
+                    </div>
+                   
+                    <div class="des">
+                        <label for="about">Product Description</label><br>
+                        
+                        <textarea id="about" name="about" rows="5" cols="111"></textarea>
+                    </div><br>
+                    <div>
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1">I Accept the Terms and Condition</label><br>
+                    </div>
+                    <div class="footer">
+                        <input type="reset">
+                        <a href="seldashboard.html"><input type="submit" value="Submit"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

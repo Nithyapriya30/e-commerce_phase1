@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>E-Commerce</title>
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+         /* Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=poppins:wght@100;300;400;500;700&display=swap');
+
+        /* Color Variables */
+        :root {
+            --white: #fff;
+            --black: #040404;
+            --green: #6cbe02;
+            --grey1: #A9A8A9;
+            --grey2: #ffffff;
+            --rojo: #ff3d3d;
+            --turquesa: #0af59e;
+            --morado: #810af5;
+            --orange: #F97517;
+        }
+
+        /* Basic Reset */
+        *,
+        *::before,
+        *::after {
+            margin-bottom:150px;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        a{
+            color:yellow;
+        }
+        html {
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.6rem;
+            background-color: rgb(255, 251, 251);
+            animation: fanimado 10s infinite;
+            color: var(--black);
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 114rem;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .d-flex {
+            display: flex;
+            align-items: center;
+        }
+
+        /* 
+=================
+Header
+=================
+*/
+
+        .header {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .top-nav {
+            background-color: var(--green);
+            font-size: 1.5rem;
+            color: var(--black);
+        }
+
+        .top-nav div {
+            justify-content: space-between;
+            height: 4.5rem;
+        }
+
+        .top-nav a {
+            color: var(--black);
+            padding: 0 0.5rem;
+        }
+
+        /* 
+=================
+Navigation
+=================
+*/
+        .navigation {
+            height: 6rem;
+            line-height: 6rem;
+            background-color:#ffffff;
+            box-shadow: 10px 5px 5px #cefade;
+        }
+
+        .navigation h1 {
+            text-decoration-color: #040404;
+            background: linear-gradient(70deg, #ff0000, #8a8a32, #ffff00, #172e2c, #4f71fc, #fc60d7, #ff0000);
+            border-color: #040404;
+            background-size: 400%;
+            word-spacing: 5px;
+            background-clip: initial;
+            -webkit-text-fill-color:transparent;
+            -webkit-background-clip: text;
+            animation: animate 10s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 400%;
+            }
+        }
+
+        .nav-center {
+            justify-content: space-between;
+        }
+
+        .nav-list .icons {
+            display: none;
+            color: #000000;
+        }
+
+        .nav-center .nav-item:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        .nav-center .nav-link {
+            font-size: 1.8rem;
+            padding: 1rem;
+            color: #000000;
+        }
+
+        .nav-center .nav-link:hover {
+            color: var(--black);
+            border-style: solid;
+            background-color: var(--white);
+            border-color:#6be0b5;
+            border-width: 2px;
+            border-radius: 1px;
+        }
+
+        .nav-center .hamburger {
+            display: none;
+            font-size: 2.3rem;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        /* Icons */
+
+        .icon {
+            cursor: pointer;
+            font-size: 2.5rem;
+            padding: 0 1rem;
+            color: #000000;
+            position: relative;
+            color:#000000;
+        }
+
+        .icon:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        .icon span {
+            position: absolute;
+            top: 3px;
+            right: -3px;
+            background-color: var(--red);
+            color: var(--black);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            height: 2rem;
+            width: 2rem;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .nav-list {
+                position: fixed;
+                top: 12%;
+                left: -35rem;
+                flex-direction: column;
+                align-items: flex-start;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+                background-color: rgb(0, 0, 0);
+                height: 100%;
+                width: 0%;
+                max-width: 35rem;
+                z-index: 100;
+                transition: all 300ms ease-in-out;
+            }
+
+            .nav-list.open {
+                left: 0;
+                width: 100%;
+            }
+
+            .nav-list .nav-item {
+                margin: 0 0 1rem 0;
+                width: 100%;
+            }
+
+            .nav-list .nav-link {
+                font-size: 2rem;
+                color: var(--black);
+            }
+
+            .nav-center .hamburger {
+                display: block;
+                color: var(--black);
+                font-size: 3rem;
+            }
+
+            .icons {
+                display: none;
+            }
+
+            .nav-list .icons {
+                display: flex;
+            }
+
+            .top-nav ul {
+                display: none;
+            }
+
+            .top-nav div {
+                justify-content: center;
+                height: 3rem;
+            }
+        }
+
+        /* 
+=================
+Hero Area
+=================
+*/
+
+        .hero,
+        .hero .glide__slides {
+            background-color: var(--white);
+            position: relative;
+            height: calc(100vh - 6rem);
+            margin: 0 4rem;
+            overflow: hidden;
+        }
+
+        .hero .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 100%;
+            padding-top: 3rem;
+        }
+
+        .hero .left {
+            position: absolute;
+            top: 0%;
+            left: 25rem;
+            opacity: 0;
+            transition: all 1000ms ease-in-out;
+        }
+
+        .hero .left span {
+            color: var(--green)
+        }
+
+        .hero .left h1 {
+            font-size: 5rem;
+            margin: 1rem 0;
+            color: var(--black);
+            background: linear-gradient(70deg, #ff0000, #ffff00, #ffff00, #83f3ea, #4f71fc, #fc60d7, #ff0000);
+            background-size: 400%;
+            word-spacing: 5px;
+            background-clip: initial;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            animation: animate 10s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 400%;
+            }
+        }
+
+        .hero .left p {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .hero .left .hero-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-size: 1.6rem;
+            margin-top: 1rem;
+            background-color: var(--black);
+            color: white;
+        }
+
+        .hero .right {
+            flex: 0 0 50%;
+            height: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero .right img {
+            position: absolute;
+            width: 55rem;
+            opacity: 0;
+            transition: all 1000ms ease-in-out;
+        }
+
+        .center .right img.img1 {
+            width: 85%;
+            right: -25%;
+            bottom: -50%;
+        }
+
+        .center .right img.img2 {
+            width: 90%;
+            right: -40%;
+            bottom: -40%;
+        }
+
+        .glide__slide--active .center .right img {
+            bottom: -3%;
+            opacity: 1;
+        }
+
+        .glide__slide--active .left {
+            opacity: 1;
+            top: 35%;
+        }
+
+        /*
+======================
+Hero Media Query
+======================
+*/
+        @media only screen and (max-width: 1500px) {
+            .hero .left {
+                left: 0;
+            }
+        }
+
+        @media only screen and (max-width: 999px) {
+            .glide__slide--active .left {
+                top: 15%;
+            }
+
+            .center .right img.img1 {
+                width: 90%;
+            }
+
+            .center .right img.img2 {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 567px) {
+            .center .right img.img1 {
+                width: 30rem;
+            }
+
+            .center .right img.img2 {
+                width: 33rem;
+            }
+
+            .hero,
+            .hero .glide__slides {
+                margin: 0;
+                padding: 0 3rem;
+            }
+
+            .hero .left h1 {
+                font-size: 3rem;
+            }
+
+            .hero .left span {
+                font-size: 1.4rem;
+            }
+
+            .hero .left p {
+                font-size: 1.5rem;
+                width: 80%;
+            }
+        }
+
+        /* fonts styling */
+
+/* css default format setting */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+   
+}
+/* for scroll to top button */
+#button{
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    z-index: 100;
+}
+
+a {
+    text-decoration: none;
+}
+.btn
+{
+    border: 1px solid black;
+    background-color: bisque;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+    </style>
+</head>
+
+<body id="top" style=" background-color: rgb(255, 255, 255);">
+    <div class="navigation">
+        <div class="nav-center container d-flex">
+            <a href="/" class="logo">
+                <h1>Trndzz</h1>
+            </a>
+    
+            <ul class="nav-list d-flex">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="cart.html" class="nav-link">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pdtpage.html" class="nav-link">Product</a>
+                </li>
+            </ul>
+    
+            <div class="icons d-flex">
+                <a href="profile.html" class="icon">
+                    <i class="bx bx-user"></i>
+                </a>
+                <div class="icon">
+                    <a href="pdtpage.html">
+                        <i class="bx bx-search"></i>
+                    </a>
+                </div>
+                <div class="icon">
+                    <a href="wishlist.html">
+                        <i class="bx bx-heart"></i>
+                        <span class="d-flex">3</span>
+                    </a>
+                </div>
+                <a href="cart.html" class="icon">
+                    <i class="bx bx-cart"></i>
+                    <span class="d-flex">2</span>
+                </a>
+            </div>
+    
+            <div class="hamburger">
+                <i class="bx bx-menu-alt-left"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==============order_confirmation starts here============== -->
+        <center><div class="container" style="margin-top: 50px;">
+                <h1 class="text-capitalize">order confirmation</h1>
+            </div>
+            <div class="row">
+                    <div>
+                        <img src="../assets/images/products/tick.jpg"  alt="image" width="250px" height="230px">
+                    </div>
+                    <div>
+                        <h2>Thankyou for your purchase!</h2>
+                        <h6>A confirmation email has been sent to <b>xyz@gmail.com</b></h6><br>
+                        <h6><span class="mr-2">Order No:</span><span><b>123123123123</b></span></h6><br>
+                        <h6>
+                            <span class="mr-2">Order Status:</span>
+                            <span>
+                                <b>
+                                    <span style="color: red;">Pending</span>
+                                </b>
+                            </span><br>
+                        </h6><br>
+                        <a href="../index.html" class="btn">Return to Home</a>
+                        <a href="ordtrk.html" class="btn">View Orders</a>
+                    </div>
+                </div>
+            </div>
+        </div></center>
+    <!-- ==============order_confirmation ends here============== -->
+</body>
+
+</html>

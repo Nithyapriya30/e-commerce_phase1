@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <title>Gateway</title>
+    <style>
+         /* Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=poppins:wght@100;300;400;500;700&display=swap');
+
+        /* Color Variables */
+        :root {
+            --white: #fff;
+            --black: #040404;
+            --green: #6cbe02;
+            --grey1: #A9A8A9;
+            --grey2: #ffffff;
+            --rojo: #ff3d3d;
+            --turquesa: #0af59e;
+            --morado: #810af5;
+            --orange: #F97517;
+        }
+
+        /* Basic Reset */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        a{
+            color:yellow;
+        }
+        html {
+            box-sizing: border-box;
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.6rem;
+            background-color: rgb(255, 251, 251);
+            animation: fanimado 10s infinite;
+            color: var(--white);
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 114rem;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .d-flex {
+            display: flex;
+            align-items: center;
+        }
+
+/*
+=================
+Header
+=================
+*/
+
+        .header {
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .top-nav {
+            background-color: var(--green);
+            font-size: 1.5rem;
+            color: var(--black);
+        }
+
+        .top-nav div {
+            justify-content: space-between;
+            height: 4.5rem;
+        }
+
+        .top-nav a {
+            color: var(--black);
+            padding: 0 0.5rem;
+        }
+        *{box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+         
+        /* 
+=================
+Navigation
+=================
+*/
+        .navigation {
+            height: 6rem;
+            line-height: 6rem;
+            background-color:#ffffff;
+            box-shadow: 10px 5px 5px #cefade;
+        }
+
+        .navigation h1 {
+            text-decoration-color: #040404;
+            background: linear-gradient(70deg, #ff0000, #8a8a32, #ffff00, #172e2c, #4f71fc, #fc60d7, #ff0000);
+            border-color: #040404;
+            background-size: 400%;
+            word-spacing: 5px;
+            background-clip: initial;
+            -webkit-text-fill-color:transparent;
+            -webkit-background-clip: text;
+            animation: animate 10s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 400%;
+            }
+        }
+
+        .nav-center {
+            justify-content: space-between;
+        }
+
+        .nav-list .icons {
+            display: none;
+            color: #000000;
+        }
+
+        .nav-center .nav-item:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        .nav-center .nav-link {
+            font-size: 1.8rem;
+            padding: 1rem;
+            color: #000000;
+        }
+
+        .nav-center .nav-link:hover {
+            color: var(--black);
+            border-style: solid;
+            background-color: var(--white);
+            border-color:#6be0b5;
+            border-width: 2px;
+            border-radius: 1px;
+        }
+
+        .nav-center .hamburger {
+            display: none;
+            font-size: 2.3rem;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        /* Icons */
+
+        .icon {
+            cursor: pointer;
+            font-size: 2.5rem;
+            padding: 0 1rem;
+            color: #000000;
+            position: relative;
+            color:#000000;
+        }
+
+        .icon:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        .icon span {
+            position: absolute;
+            top: 3px;
+            right: -3px;
+            background-color: var(--red);
+            color: var(--black);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            height: 2rem;
+            width: 2rem;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .nav-list {
+                position: fixed;
+                top: 12%;
+                left: -35rem;
+                flex-direction: column;
+                align-items: flex-start;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+                background-color: rgb(0, 0, 0);
+                height: 100%;
+                width: 0%;
+                max-width: 35rem;
+                z-index: 100;
+                transition: all 300ms ease-in-out;
+            }
+
+            .nav-list.open {
+                left: 0;
+                width: 100%;
+            }
+
+            .nav-list .nav-item {
+                margin: 0 0 1rem 0;
+                width: 100%;
+            }
+
+            .nav-list .nav-link {
+                font-size: 2rem;
+                color: var(--black);
+            }
+
+            .nav-center .hamburger {
+                display: block;
+                color: var(--black);
+                font-size: 3rem;
+            }
+
+            .icons {
+                display: none;
+            }
+
+            .nav-list .icons {
+                display: flex;
+            }
+
+            .top-nav ul {
+                display: none;
+            }
+
+            .top-nav div {
+                justify-content: center;
+                height: 3rem;
+            }
+        }
+
+        /* 
+=================
+Hero Area
+=================
+*/
+
+        .hero,
+        .hero .glide__slides {
+            background-color: var(--white);
+            position: relative;
+            height: calc(100vh - 6rem);
+            margin: 0 4rem;
+            overflow: hidden;
+        }
+
+        .hero .center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 100%;
+            padding-top: 3rem;
+        }
+
+        .hero .left {
+            position: absolute;
+            top: 0%;
+            left: 25rem;
+            opacity: 0;
+            transition: all 1000ms ease-in-out;
+        }
+
+        .hero .left span {
+            color: var(--green)
+        }
+
+        .hero .left h1 {
+            font-size: 5rem;
+            margin: 1rem 0;
+            color: var(--black);
+            background: linear-gradient(70deg, #ff0000, #ffff00, #ffff00, #83f3ea, #4f71fc, #fc60d7, #ff0000);
+            background-size: 400%;
+            word-spacing: 5px;
+            background-clip: initial;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            animation: animate 10s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 400%;
+            }
+        }
+
+        .hero .left p {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        .hero .left .hero-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            font-size: 1.6rem;
+            margin-top: 1rem;
+            background-color: var(--black);
+            color: white;
+        }
+
+        .hero .right {
+            flex: 0 0 50%;
+            height: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero .right img {
+            position: absolute;
+            width: 55rem;
+            opacity: 0;
+            transition: all 1000ms ease-in-out;
+        }
+
+        .center .right img.img1 {
+            width: 85%;
+            right: -25%;
+            bottom: -50%;
+        }
+
+        .center .right img.img2 {
+            width: 90%;
+            right: -40%;
+            bottom: -40%;
+        }
+
+        .glide__slide--active .center .right img {
+            bottom: -3%;
+            opacity: 1;
+        }
+
+        .glide__slide--active .left {
+            opacity: 1;
+            top: 35%;
+        }
+
+        /*
+======================
+Hero Media Query
+======================
+*/
+        @media only screen and (max-width: 1500px) {
+            .hero .left {
+                left: 0;
+            }
+        }
+
+        @media only screen and (max-width: 999px) {
+            .glide__slide--active .left {
+                top: 15%;
+            }
+
+            .center .right img.img1 {
+                width: 90%;
+            }
+
+            .center .right img.img2 {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: 567px) {
+            .center .right img.img1 {
+                width: 30rem;
+            }
+
+            .center .right img.img2 {
+                width: 33rem;
+            }
+
+            .hero,
+            .hero .glide__slides {
+                margin: 0;
+                padding: 0 3rem;
+            }
+
+            .hero .left h1 {
+                font-size: 3rem;
+            }
+
+            .hero .left span {
+                font-size: 1.4rem;
+            }
+
+            .hero .left p {
+                font-size: 1.5rem;
+                width: 80%;
+            }
+        }
+       
+        html {
+            font-size: 72.5%;
+        }
+
+        body {
+            background-color: #fff;
+            color: #080808;
+            font-family: 'Monsterrat', sans-serif;
+        
+        }
+
+    
+        em {
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        hr {
+            color: #fff;
+            margin-bottom: 1.2rem;
+        }
+
+      
+        /* Right Side of containerzz */
+
+        .right-side {
+            background-color: #fff;
+            padding:5rem;
+             border: 1px solid black;
+             margin-top: 50px;
+             margin-left: 10px;
+        }
+        
+
+        .receipt {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-bottom: solid 1px;
+            margin-bottom: 1rem;
+        }
+
+        .receipt-heading {
+            font-size: 1.6rem;
+            text-align: left;
+        }
+
+        .table {
+            border-collapse: separate;
+            border-spacing: 0 1.5rem;
+            color: #64645f;
+            font-size: 1.2rem;
+            margin-bottom: .5rem;
+            width: 100%;
+        }
+
+        .total td {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .price {
+            text-align: end;
+        }
+
+        /* Payment Section */
+
+        .payment-heading {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-box {
+            display: grid;
+            grid-template-rows: 1fr;
+            gap: 1.5rem;
+        }
+
+        .card-logo {
+            font-size: 2rem;
+        }
+
+        .expires,
+        .form-box label {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .form-box input {
+            font-family: inherit;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            width: 100%;
+        }
+
+        .form-box select {
+            padding: 0.5rem;
+        }
+
+        .form-box #cvv {
+            width: 25%;
+        }
+
+        .cvv-info:link,
+        .cvv-info:visited {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .cvv-info:hover,
+        .cvv-info:active {
+            color: #5f7986;
+            text-decoration: none;
+        }
+
+        .btn {
+            background-color: #8acb78;
+            border: none;
+            border-radius: 8px;
+            color: #eff2f3;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #5f7986;
+            transition: ease-out 0.1s;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .form-box *:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.8rem rgba(139, 139, 107, 0.5);
+            border-radius: 8px;
+        }
+        
+    </style>
+</head>
+    <body>
+        <div class="navigation">
+            <div class="nav-center container d-flex">
+                <a href="/" class="logo">
+                    <h1>Trndzz</h1>
+                </a>
+        
+                <ul class="nav-list d-flex">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cart.html" class="nav-link">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pdtpage.html" class="nav-link">Product</a>
+                    </li>
+                </ul>
+        
+                <div class="icons d-flex">
+                    <a href="profile.html" class="icon">
+                        <i class="bx bx-user"></i>
+                    </a>
+                    <div class="icon">
+                        <a href="pdtpage.html">
+                            <i class="bx bx-search"></i>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="wishlist.html">
+                            <i class="bx bx-heart"></i>
+                            <span class="d-flex">3</span>
+                        </a>
+                    </div>
+                    <a href="cart.html" class="icon">
+                        <i class="bx bx-cart"></i>
+                        <span class="d-flex">2</span>
+                    </a>
+                </div>
+        
+                <div class="hamburger">
+                    <i class="bx bx-menu-alt-left"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-containerzz">
+            </div>
+        <div class="right-side">
+            <div class="receipt">
+                <h2 class="receipt-heading">Receipt Summary</h2>
+                <div>
+                    <table class="table">
+                        <tr>
+                            <td>90*2</td>
+                            <td class="price">Rs.180/-</td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td class="price">0.00</td>
+                        </tr>
+                        <tr>
+                            <td>Subtotal</td>
+                            <td class="price">180.00</td>
+                        </tr>
+                        <tr>
+                            <td>Tax</td>
+                            <td class="price">Rs.50.41</td>
+                        </tr>
+                        <tr class="total">
+                            <td>Total</td>
+                            <td class="price">&#8377;230.41</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="payment-info">
+                <h3 class="payment-heading">Payment Information</h3>
+                <form class="form-box" enctype="text/plain" method="get" target="_blank">
+                    <div>
+                        <label for="full-name">Full Name</label>
+                        <input id="full-name" name="full-name" placeholder="Nithya" required type="text" />
+                    </div>
+
+                    <div>
+                        <label for="credit-card-num">Card Number
+                            <span class="card-logos">
+                                <i class="card-logo fa-brands fa-cc-visa"></i>
+                                <i class="card-logo fa-brands fa-cc-amex"></i>
+                                <i class="card-logo fa-brands fa-cc-mastercard"></i>
+                                <i class="card-logo fa-brands fa-cc-discover"></i> </span></label>
+                        <input id="credit-card-num" name="credit-card-num" placeholder="9894400537" required
+                            type="text" />
+                    </div>
+
+                    <div>
+                        <p class="expires">Expires on:</p>
+                        <div class="card-experation">
+                            <label for="expiration-month">Month</label>
+                            <select id="expiration-month" name="expiration-month" required>
+                                <option value="">Month:</option>
+                                <option value="">January</option>
+                                <option value="">February</option>
+                                <option value="">March</option>
+                                <option value="">April</option>
+                                <option value="">May</option>
+                                <option value="">June</option>
+                                <option value="">July</option>
+                                <option value="">August</option>
+                                <option value="">September</option>
+                                <option value="">October</option>
+                                <option value="">November</option>
+                                <option value="">Decemeber</option>
+                            </select>
+
+                            <label class="expiration-year">Year</label>
+                            <select id="experation-year" name="experation-year" required>
+                                <option value="">Year</option>
+                                <option value="">2023</option>
+                                <option value="">2024</option>
+                                <option value="">2025</option>
+                                <option value="">2026</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="cvv">CVV</label>
+                        <input id="cvv" name="cvv" placeholder="415" type="text" required />
+                        <a class="cvv-info" href="https://www.idfcfirstbank.com/finfirst-blogs/credit-card/cvv">What is CVV?</a>
+                    </div>
+
+                    <button class="btn">
+                       <a href="ordcnf.html" style="text-decoration: none;"> <i class="fa-solid fa-lock"></i> Book Securely
+                    </button>
+                </form>
+
+                <p class="footer-text">
+                    <i class="fa-solid fa-lock"></i>
+                    Your credit card infomration is encrypted
+                </p>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>
